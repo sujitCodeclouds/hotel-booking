@@ -1,0 +1,96 @@
+.App {
+  text-align: center;
+}
+:root {
+  --primaryColor: #af9a7d;
+  --mainWhite: #fff;
+  --offWhite: #f7f7f7;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --darkGrey: #cfcfcf;
+  --darkRed: #ff0000;
+  --green: green;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 3px;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.main-footer {
+  background-color: var(--mainBlack);
+  padding: 30px 0;
+  text-align: center;
+}
+.main-footer p {
+  margin: 0;
+  color: var(--darkGrey);
+}
+.room-list {
+  padding: 60px 0;
+}
+.room-list .card {
+  border-radius: 0;
+}
+.room-list .card .card-img-top {
+  border-radius: 0;
+  height: 200px;
+  overflow: hidden;
+}
+.text-red-800 {
+  color: var(--darkRed);
+  font-size: 12px;
+}
+.text-green-800 {
+  color: var(--green);
+  font-size: 12px;
+}
+.user-list {
+  padding: 150px 0 0;
+  min-height: 500px;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.login-page {
+  padding: 60px 0;
+  min-height: 600px;
+}
+.login-form {
+  padding: 30px;
+  background-color: var(--darkGrey);
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
