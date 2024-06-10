@@ -1,9 +1,7 @@
-import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "react-datepicker/dist/react-datepicker.css";
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./Components/MenuBar/MenuBar";
 import Footer from './Components/Footer/Footer';
 import Home from './Pages/Home';
 import Hotels from './Pages/Hotels';
@@ -30,9 +28,9 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route path='/home' element={<Home />} />
+          <Route path='/' element={<Home />} />
           <Route path='/hotels' element={<Hotels />} />
-          <Route path='/' element={<LoginPage />} />
+          <Route path='/login' element={<LoginPage />} />
         </Routes>
 
       </BrowserRouter>
