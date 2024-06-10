@@ -1,14 +1,11 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
 import Logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
 function MenuBar() {
   return (
-    <Navbar sticky="top" expand="lg" bg="light">
-      <Container>
-        <Navbar.Brand href="/">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <div className="container">
+        <Link className="navbar-brand" to="/">
           <img
             src={Logo}
             width="250"
@@ -16,17 +13,43 @@ function MenuBar() {
             className="d-inline-block align-top"
             alt="logo"
           />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link href="/home">Home</Nav.Link>
-            <Nav.Link href="/hotels">Rooms</Nav.Link>
-            <Nav.Link href="/">logout{""}</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link className="nav-link active" aria-current="page" to="/">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link active"
+                aria-current="page"
+                to="/hotels"
+              >
+                Rooms
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link active" aria-current="page" to="/login">
+                Login
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 }
 
