@@ -1,5 +1,4 @@
 import React from "react";
-import Room from "../Components/Rooms/Room";
 import Navbar from "../Components/MenuBar/MenuBar";
 const data = localStorage.getItem("data");
 const userdata = JSON.parse(data);
