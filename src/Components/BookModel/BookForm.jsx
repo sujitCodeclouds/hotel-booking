@@ -5,7 +5,7 @@ import Modal from "react-bootstrap/Modal";
 import { toast } from "react-toastify";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 function BookForm({ title }) {
   const [show, setShow] = useState(false);
 
@@ -23,7 +23,7 @@ function BookForm({ title }) {
   const isValidPhone =
     /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/i;
 
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
 

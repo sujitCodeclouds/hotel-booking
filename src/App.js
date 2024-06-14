@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from './Components/Footer/Footer';
 import Home from './Pages/Home';
 import Hotels from './Pages/Hotels';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoginPage from './Pages/LoginPage';
 
