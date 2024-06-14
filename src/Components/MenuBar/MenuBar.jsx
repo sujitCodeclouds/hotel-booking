@@ -38,7 +38,7 @@ function MenuBar() {
                 aria-current="page"
                 to="/hotels"
               >
-                Rooms List
+                Booking Info
               </Link>
             </li>
             <li className="nav-item">
