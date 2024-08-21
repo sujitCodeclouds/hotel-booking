@@ -1,8 +1,10 @@
 import React from "react";
 import Navbar from "../Components/MenuBar/MenuBar";
+
 const data = localStorage.getItem("data");
 const userdata = JSON.parse(data);
 //console.log(userdata);
+
 function Hotels() {
   return (
     <>

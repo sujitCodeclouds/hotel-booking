@@ -3,6 +3,7 @@ import React from "react";
 import Banner from "../Components/Banner/Banner";
 import Room from "../Components/Rooms/Room";
 import Navbar from "../Components/MenuBar/MenuBar";
+
 function Home() {
   return (
     <>

@@ -5,7 +5,7 @@ import Modal from "react-bootstrap/Modal";
 import { toast } from "react-toastify";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function BookForm({ title }) {
   const [show, setShow] = useState(false);
 
@@ -18,16 +18,23 @@ function BookForm({ title }) {
   const [checkedin, setCheckedin] = useState(new Date());
   const [checkedout, setCheckedout] = useState(new Date());
   const [errors, setErrors] = useState({});
+  //const [isLoggedIn, setIsLoggedIn] = useState(false);
   // const [startDate, setStartDate] = useState(new Date());
   let isValidEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
   const isValidPhone =
     /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/i;
 
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    let isLoggedIn =
+      localStorage.getItem("isloggedin") === "yes" ? true : false;
     if (formValidation()) {
+      if (!isLoggedIn) {
+        navigate("/login");
+        return false;
+      }
       setUsers([
         ...users,
         {
@@ -105,11 +112,25 @@ function BookForm({ title }) {
   });
   useEffect(() => {
     localStorage.setItem("data", JSON.stringify(users));
+    // setIsLoggedIn(true);
+    // console.log(isLoggedIn);
   }, [users]);
+
+  // const loginCheck = (e) => {
+  //   if (isLoggedIn) {
+  //     navigate("/login");
+  //     console.log(isLoggedIn, "Please Login");
+  //   ¸}
+  // };
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button
+        variant="primary"
+        onClick={() => {
+          handleShow();
+        }}
+      >
         {title}
       </Button>
       <Modal show={show} onHide={handleClose}>

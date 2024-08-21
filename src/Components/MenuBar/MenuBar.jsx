@@ -1,7 +1,15 @@
 import React from "react";
 import Logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 function MenuBar() {
+  let isLoggedIn = localStorage.getItem("isloggedin") === "yes" ? true : false;
+  const navigate = useNavigate();
+  const handelLogout = (e) => {
+    localStorage.removeItem("isloggedin");
+    navigate("/");
+  };
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container">
@@ -32,7 +40,10 @@ function MenuBar() {
                 Home
               </Link>
             </li>
-            <li className="nav-item">
+            <li
+              className="nav-item"
+              style={{ display: isLoggedIn ? "block" : "none" }}
+            >
               <Link
                 className="nav-link active"
                 aria-current="page"
@@ -41,9 +52,24 @@ function MenuBar() {
                 Booking Info
               </Link>
             </li>
-            <li className="nav-item">
+            <li
+              className="nav-item"
+              style={{ display: isLoggedIn ? "none" : "block" }}
+            >
               <Link className="nav-link active" aria-current="page" to="/login">
                 Login
+              </Link>
+            </li>
+            <li
+              className="nav-item"
+              style={{ display: isLoggedIn ? "block" : "none" }}
+            >
+              <Link
+                className="nav-link active"
+                aria-current="page"
+                onClick={handelLogout}
+              >
+                Logout
               </Link>
             </li>
           </ul>

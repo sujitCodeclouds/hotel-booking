@@ -6,18 +6,17 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  //const loggeduser = JSON.parse(localStorage.getItem("data"));
 
   const userName = "admin@admin.com";
   const userPassword = "123456";
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //const loggeduser = JSON.parse(localStorage.getItem("data"));
 
     if (email === userName && password === userPassword) {
       toast.success("Login Successfully!");
-      navigate("/home");
+      localStorage.setItem("isloggedin", "yes");
+      navigate("/");
     } else {
       toast.error("Invalid email or password");
     }
